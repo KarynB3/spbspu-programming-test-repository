@@ -1,13 +1,13 @@
 #include <iostream>
 
-namespace karyn.mahlophe {
+namespace mahlophe {
 
 void run() {
     std::cout << "karyn.mahlophe" << std::endl;
 }
 
-} // namespace karyn.mahlophe
+} // namespace mahlophe
 
 int main() {
-    karyn.mahlophe::run();
+    mahlophe::run();
     return 0;

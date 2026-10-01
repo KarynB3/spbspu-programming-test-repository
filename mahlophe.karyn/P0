@@ -1,6 +1,6 @@
 #include <iostream>
 
-namespace mahlophe.karyn {
+namespace mahlophe {
 
 void run() {
     std::cout << "mahlophe.karyn" << std::endl;

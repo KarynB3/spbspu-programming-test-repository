@@ -1,0 +1,26 @@
+#include <stdlib.h>
+
+int ** convert(const int * t, size_t n, const size_t * lns, size_t rows)
+{
+    int ** table = (int **)malloc(rows * sizeof(int *));
+    if (table == NULL) return NULL;
+
+    size_t offset = 0;
+
+    for (size_t i = 0; i < rows; i++) {
+        table[i] = (int *)malloc(lns[i] * sizeof(int));
+        if (table[i] == NULL) {
+            for (size_t j = 0; j < i; j++)
+                free(table[j]);
+            free(table);
+            return NULL;
+        }
+
+        for (size_t j = 0; j < lns[i]; j++) {
+            table[i][j] = t[offset + j];
+        }
+        offset += lns[i];
+    }
+
+    return table;
+}
